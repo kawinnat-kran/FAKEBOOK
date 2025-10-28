@@ -1,0 +1,23 @@
+import express from "express";
+
+const app = express();
+app.use(express.json());
+
+app.use("/api/auth/login", (req, res) => {
+  res.send(req.body.identity);
+});
+
+app.use("/api/auth/", (req, res) => {
+  res.send("Auth service");
+});
+app.use("/api/post", (req, res) => {
+  res.send("Post service");
+});
+app.use("/api/comment", (req, res) => {
+  res.send("Comment service");
+});
+app.use("/api/like", (req, res) => {
+  res.send("Like service");
+});
+
+export default app;
