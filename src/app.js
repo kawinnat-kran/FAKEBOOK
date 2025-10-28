@@ -1,15 +1,10 @@
 import express from "express";
+import authRoute from "./routes/auth.route.js";
 
 const app = express();
 app.use(express.json());
 
-app.use("/api/auth/login", (req, res) => {
-  res.send(req.body.identity);
-});
-
-app.use("/api/auth/", (req, res) => {
-  res.send("Auth service");
-});
+app.use("/api/auth/", authRoute);
 app.use("/api/post", (req, res) => {
   res.send("Post service");
 });
