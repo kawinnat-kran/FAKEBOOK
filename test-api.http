@@ -1,8 +1,17 @@
-GET http://localhost:8899/api/auth/
+# Register api
+POST http://localhost:8899/api/auth/register HTTP/1.1
+content-type: application/json
+
+{
+ "identity" : "1111111115",
+ #"identity" : "someone@ggg.mail",
+ "firstName" : "s",
+ "lastName" : "codecamp",
+ "password" : "12345776",
+ "confirmPassword" : "123456"
+}
 ###
 
-GET http://localhost:8899/api/post/
-###
 
 POST http://localhost:8899/api/auth/login
 content-Type: application/json
@@ -12,3 +21,14 @@ content-Type: application/json
     "password": "a1234"
 }
 ###
+
+# Login api
+POST http://localhost:8899/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+ "identity" : "andy@ggg.mail",
+ "password" : "123456"
+}
+###
+
